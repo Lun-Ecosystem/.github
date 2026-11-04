@@ -29,15 +29,18 @@ tool keeps working.
 flowchart LR
     CORE["◆ Lun'Anima<br/>Natsume · memory · voice"]
     ACEDIA["Lun'Acedia<br/>mail · calendar · tasks<br/><i>agent: Pina</i>"]
+    AVARITIA["Lun'Avaritia<br/>knowledge wiki"]
     IRA["Lun'Ira<br/>intent → code"]
     GULA["Lun'Gula<br/>replays → ONNX"]
     DOCS[("Lun'Docs<br/>standards · contract · registry")]
 
     CORE -- "delegates" --> ACEDIA
+    CORE -- "delegates" --> AVARITIA
     CORE -. "later" .-> IRA
     CORE -. "later" .-> GULA
     DOCS -.- CORE
     DOCS -.- ACEDIA
+    DOCS -.- AVARITIA
 ```
 
 ## ◈ projects
@@ -46,8 +49,9 @@ flowchart LR
 |---|---|---|---|
 | **Lun'Anima** · _private_ | core | Natsume: persona, memory, conversation, desktop and mobile apps | ![in dev](https://img.shields.io/badge/-in_development-555555?style=flat-square) |
 | [`lun-acedia`](https://github.com/Lun-Ecosystem/lun-acedia) | satellite | The day's server: mail, calendar and tasks, sorted at the source, with its own assistant | ![in dev](https://img.shields.io/badge/-in_development-555555?style=flat-square) |
-| [`LunIra`](https://github.com/CrOliX-AltF4/LunIra) | satellite | Multi-agent CLI that turns an intent into shippable code | ![active](https://img.shields.io/badge/-active-4c7a4c?style=flat-square) |
-| [`LunGula`](https://github.com/CrOliX-AltF4/LunGula) | satellite | Imitation learning: human replays in, ONNX model out | ![paused](https://img.shields.io/badge/-on_pause-8a7a5a?style=flat-square) |
+| [`lun-avaritia`](https://github.com/Lun-Ecosystem/lun-avaritia) | satellite | The ecosystem's knowledge base: linked, normalised records with sourced facts, Obsidian import and export | ![in dev](https://img.shields.io/badge/-in_development-555555?style=flat-square) |
+| **Lun'Ira** · _private_ | satellite | Multi-agent CLI that turns an intent into shippable code | ![active](https://img.shields.io/badge/-active-4c7a4c?style=flat-square) |
+| **Lun'Gula** · _private_ | satellite | Imitation learning: human replays in, ONNX model out | ![paused](https://img.shields.io/badge/-on_pause-8a7a5a?style=flat-square) |
 | [`lun-docs`](https://github.com/Lun-Ecosystem/lun-docs) | reference | Shared standards, the satellite contract, the project registry and a Claude Code plugin | ![active](https://img.shields.io/badge/-active-4c7a4c?style=flat-square) |
 
 The registry in [`lun-docs`](https://github.com/Lun-Ecosystem/lun-docs) is the source of truth for this list.
