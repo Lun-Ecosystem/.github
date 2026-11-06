@@ -51,8 +51,7 @@ flowchart LR
 | [`lun-luxuria`](https://github.com/Lun-Ecosystem/lun-luxuria) | satellite | A desktop voice companion, on its own or as Natsume's body when linked to the core | ![in dev](https://img.shields.io/badge/-in_development-555555?style=flat-square) |
 | [`lun-docs`](https://github.com/Lun-Ecosystem/lun-docs) | reference | Shared standards, the satellite contract, the project registry and a Claude Code plugin | ![active](https://img.shields.io/badge/-active-4c7a4c?style=flat-square) |
 
-Lun'Ira (intent to code) and Lun'Gula (imitation learning) are set aside: their repositories are archived,
-and they will be rethought and renamed. The registry in
+The registry in
 [`lun-docs`](https://github.com/Lun-Ecosystem/lun-docs) is the source of truth for this list.
 
 ## ◈ how it holds together
