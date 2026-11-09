@@ -2,7 +2,8 @@
 
 # Lun' Ecosystem
 
-**A set of standalone tools orbiting one entity: Natsume Tsurugi, a personal assistant with a character.**
+**Des outils autonomes qui gravitent autour d'une entité : Natsume Tsurugi, une assistante personnelle avec un vrai
+caractère.**
 
 [![Docs](https://img.shields.io/badge/docs-lun--docs-555555?style=flat-square)](https://github.com/Lun-Ecosystem/lun-docs)
 
@@ -18,58 +19,57 @@
 
 ---
 
-## ◈ the idea
+## ◈ l'idée
 
-Each tool does one job well and works on its own. Natsume, the core, links them: she understands what
-you ask, hands the work to the right tool, remembers your shared history and reports back. Turn her off
-and every tool keeps working.
+Chaque outil fait bien une seule chose et fonctionne seul. Natsume, le core, les relie : elle comprend ce que tu
+demandes, confie le travail au bon outil, se souvient de votre histoire commune et te rend compte. Éteins-la, et chaque
+outil continue de tourner.
 
 ```mermaid
 flowchart LR
-    CORE["◆ Lun'Anima<br/>Natsume · relationship · conversation"]
-    ACEDIA["Lun'Acedia<br/>mail · calendar · tasks"]
-    AVARITIA["Lun'Avaritia<br/>knowledge wiki"]
-    LUXURIA["Lun'Luxuria<br/>voice · stage · what it hears"]
-    DOCS[("Lun'Docs<br/>standards · contract · registry")]
+    CORE["◆ Lun'Anima<br/>Natsume · relation · conversation"]
+    ACEDIA["Lun'Acedia<br/>mail · agenda · tâches"]
+    AVARITIA["Lun'Avaritia<br/>wiki du savoir"]
+    LUXURIA["Lun'Luxuria<br/>voix · scène · ce qu'il écoute"]
+    DOCS[("Lun'Docs<br/>normes · contrat · registre")]
 
-    CORE -- "delegates" --> ACEDIA
-    CORE -- "delegates" --> AVARITIA
-    CORE -- "her body" --> LUXURIA
+    CORE -- "délègue" --> ACEDIA
+    CORE -- "délègue" --> AVARITIA
+    CORE -- "son corps" --> LUXURIA
     DOCS -.- CORE
     DOCS -.- ACEDIA
     DOCS -.- AVARITIA
 ```
 
-## ◈ projects
+## ◈ les projets
 
-| Project | Role | What it is | Status |
+| Projet | Rôle | Ce que c'est | État |
 |---|---|---|---|
-| **Lun'Anima** · _private_ | core | Natsume: identity, memory of the relationship, conversation, and her app (a PWA, on desktop and mobile) | ![in dev](https://img.shields.io/badge/-in_development-555555?style=flat-square) |
-| [`lun-acedia`](https://github.com/Lun-Ecosystem/lun-acedia) | satellite | The day's server: mail, calendar and tasks, sorted at the source, with its own assistant | ![in dev](https://img.shields.io/badge/-in_development-555555?style=flat-square) |
-| [`lun-avaritia`](https://github.com/Lun-Ecosystem/lun-avaritia) | satellite | The ecosystem's knowledge base: linked, normalised records with sourced facts, Obsidian import and export | ![in dev](https://img.shields.io/badge/-in_development-555555?style=flat-square) |
-| [`lun-luxuria`](https://github.com/Lun-Ecosystem/lun-luxuria) | satellite | A desktop voice companion, on its own or as Natsume's body when linked to the core | ![in dev](https://img.shields.io/badge/-in_development-555555?style=flat-square) |
-| [`lun-docs`](https://github.com/Lun-Ecosystem/lun-docs) | reference | Shared standards, the satellite contract, the project registry and a Claude Code plugin | ![active](https://img.shields.io/badge/-active-4c7a4c?style=flat-square) |
+| **Lun'Anima** · _privé_ | core | Natsume : son identité, la mémoire de la relation, la conversation, et son app (une PWA, au bureau et au téléphone) | ![en dev](https://img.shields.io/badge/-en_d%C3%A9veloppement-555555?style=flat-square) |
+| [`lun-acedia`](https://github.com/Lun-Ecosystem/lun-acedia) | satellite | Le serveur de la journée : mail, agenda et tâches, triés à la source, avec son propre assistant | ![en dev](https://img.shields.io/badge/-en_d%C3%A9veloppement-555555?style=flat-square) |
+| [`lun-avaritia`](https://github.com/Lun-Ecosystem/lun-avaritia) | satellite | La base de savoir de l'écosystème : des fiches reliées et normalisées, aux faits sourcés, avec l'import et l'export Obsidian | ![en dev](https://img.shields.io/badge/-en_d%C3%A9veloppement-555555?style=flat-square) |
+| [`lun-luxuria`](https://github.com/Lun-Ecosystem/lun-luxuria) | satellite | Un compagnon vocal sur ton poste, seul, ou corps de Natsume une fois relié au core | ![en dev](https://img.shields.io/badge/-en_d%C3%A9veloppement-555555?style=flat-square) |
+| [`lun-docs`](https://github.com/Lun-Ecosystem/lun-docs) | référentiel | Les normes communes, le contrat des satellites, le registre des projets et un plugin Claude Code | ![actif](https://img.shields.io/badge/-actif-4c7a4c?style=flat-square) |
 
-The registry in
-[`lun-docs`](https://github.com/Lun-Ecosystem/lun-docs) is the source of truth for this list.
+Le registre de [`lun-docs`](https://github.com/Lun-Ecosystem/lun-docs) fait foi pour cette liste.
 
-## ◈ how it holds together
+## ◈ ce qui tient l'ensemble
 
-- **Standalone first.** Every satellite works on its own, with its own screen.
-- **The satellite owns its business.** Its rules, its actions and its guardrails live in one place. The
-  core never re-implements them: it links the tool to the brain.
-- **One agent per satellite, delegated by the core.** Each satellite can carry an assistant bound to its
-  mission, neutral by default. The core routes the request, delegates and gives the answer back.
-- **One mind, two kinds of memory.** The core keeps the relationship; Lun'Avaritia keeps the facts, sourced
-  and validated.
-- **Human in control.** Nothing destructive or outgoing happens without a click: deletions are always
-  confirmed, mail is drafted, never sent by an agent. Every AI can be paused or switched off.
-- **Private by default.** Self-hosted, nothing exposed to the internet, no secret in the public repos.
+- **Autonome d'abord.** Chaque satellite fonctionne seul, avec son propre écran.
+- **Le satellite possède son métier.** Ses règles, ses actions et ses garde-fous vivent à un seul endroit. Le core ne
+  les réimplémente jamais : il relie l'outil au cerveau.
+- **Un agent par satellite, à qui le core délègue.** Chaque satellite peut porter un assistant attaché à sa mission,
+  neutre par défaut. Le core oriente la demande, délègue et rend la réponse.
+- **Un esprit, deux mémoires.** Le core garde la relation ; Lun'Avaritia garde les faits, sourcés et validés.
+- **L'humain aux commandes.** Rien de destructif ni de sortant ne se fait sans un clic : une suppression se confirme
+  toujours, un mail se prépare en brouillon et aucun agent ne l'envoie. Chaque IA peut être mise en pause ou éteinte.
+- **Privé par défaut.** Auto-hébergé, rien d'exposé à Internet, aucun secret dans les dépôts publics.
 
 ---
 
 <div align="center">
 
-Built by [CrOliX-AltF4](https://github.com/CrOliX-AltF4). Lun'Anima and its visual assets are proprietary; the public repositories carry their own licence.
+Construit par [CrOliX-AltF4](https://github.com/CrOliX-AltF4). Lun'Anima et ses visuels sont propriétaires ; les dépôts
+publics portent leur propre licence.
 
 </div>
