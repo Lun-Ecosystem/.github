@@ -4,7 +4,6 @@
 
 **A set of standalone tools orbiting one entity: Natsume Tsurugi, a personal assistant with a character.**
 
-[![Website](https://img.shields.io/badge/website-lun'-C8A415?style=flat-square)](https://crolix-website.vercel.app)
 [![Docs](https://img.shields.io/badge/docs-lun--docs-555555?style=flat-square)](https://github.com/Lun-Ecosystem/lun-docs)
 
 ```
